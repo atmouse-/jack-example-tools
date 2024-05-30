@@ -198,6 +198,14 @@ exe_jack_wait = executable(
   install: true
 )
 
+exe_jack_wait_client = executable(
+  'jack_wait_client',
+  c_args: c_args_common,
+  sources: ['wait_client.c'],
+  dependencies: [dep_jack],
+  install: true
+)
+
 if build_alsa_midi
   subdir('alsa_midi')
 endif
